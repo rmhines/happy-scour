@@ -1,37 +1,40 @@
 (function() {
   var app = angular.module('HappyScour', ['ionic']);
 
-  //app.controller('MainCtrl', function ($scope, $http) {
-  //  $http.get('https://happy-scour-api.herokuapp.com/')
-  //    .success(function(res){
-  //      $scope.message = res.message;
-  //    });
-  //
-  //});
-
   app.config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/')
+    $urlRouterProvider.otherwise('/home');
 
     $stateProvider.state('home', {
       url: '/home',
       views: {
         home: {
-          templateUrl: 'home.html'
+          templateUrl: 'home.html',
+          controller: 'HomeCtrl'
         }
       }
-    });
+    })
 
-    $stateProvider.state('help', {
-      url: '/help',
+    .state('spot', {
+      url: '/spots/:spotId',
       views: {
-        help: {
-          templateUrl: 'help.html'
+        spot: {
+          templateUrl: 'spot.html',
+          controller: 'SpotCtrl'
+        }
+      }
+    })
+
+    .state('add', {
+      url: '/add',
+      views: {
+        add: {
+          templateUrl: 'add.html'
         }
       }
     });
   });
 
-  app.controller('SpotsCtrl', function ($scope, $http) {
+  app.controller('HomeCtrl', function ($scope, $http) {
     $scope.spots = [];
     $scope.getAllSpots = function() {
       $http.get('https://happy-scour-api.herokuapp.com/spots')
@@ -41,7 +44,11 @@
         .error(function(res) {
           alert("Error fetching all spots!");
         });
-    }
+    };
+  });
+
+  app.controller('SpotCtrl', function ($scope, $stateParams) {
+
   });
 
   app.run(function ($ionicPlatform) {
