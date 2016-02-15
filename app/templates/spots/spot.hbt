@@ -1,0 +1,8 @@
+<div class="spot-details">
+	<p><b>Name: </b>{{spot.name}}</p>
+	<p><b>Website: </b>{{spot.website}}</p>
+	<p><b>Type: </b>{{spot.type}}</p>
+	<p><b>Theme: </b>{{spot.theme}}</p>
+	<p><b>Visits: </b>{{spot.metrics.visited}}</p>
+	<a class="btn btn-back" href="#home"><b>< Back</b></a>
+</div>

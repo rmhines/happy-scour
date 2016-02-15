@@ -1,0 +1,8 @@
+<ul class="spot-list">
+	{{#each spots}}
+	<li class="spot-list-item">
+		<a class="spot-btn" href="#spots/{{this._id}}">{{this.name}}<span class="chevron-right"><b>></b></span></a>
+	</li>
+	<hr class="spot-list-hr"></hr>
+	{{/each}}
+</ul>

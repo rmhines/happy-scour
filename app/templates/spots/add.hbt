@@ -1,0 +1,8 @@
+<div class="spot-add-wrap">
+	<p><b>Name: </b><input class="spot-add spot-add-name" /></p>
+	<p><b>Website: </b><input class="spot-add spot-add-website" /></p>
+	<p><b>Type: </b><input class="spot-add spot-add-type" /></p>
+	<p><b>Theme: </b><input class="spot-add spot-add-theme" /></p>
+
+	<div class="btn btn-done"><b>Submit!</b></div>
+</div>
